@@ -45,34 +45,23 @@
                 <version>0.8.5</version>
                 <executions>
                     <execution>
-                        <id>prepare-agent-123</id>
+                        <id>prepare-agent</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
                     <execution>
-                        <id>report-123</id>
+                        <id>report</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>report</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>check-123</id>
-                        <!--                        <phase>verify</phase>-->
-                        <goals>
-                            <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
                     <rules>
                         <rule>
-                            <element>CLASS</element>
-                            <excludes>
-                                <exclude>*Test</exclude>
-                            </excludes>
                             <limits>
                                 <limit>
                                     <counter>BRANCH</counter>

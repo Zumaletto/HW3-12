@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 class ProdManagerTest {
     private ProdRepo repo = new ProdRepo();
     private ProdManager manager = new ProdManager(repo);
-    private Product first = new Book(1, "Овод", 157.20, "Войнич");
+    private Product first = new Book(1, "IPhone", 157.20, "Войнич");
     private Product second = new Book(2, "Алиса", 102.30, "Неизвестный");
     private Product third = new Book(3, "Оливия Летам", 758.70, "Войнич");
     private Product fourth = new Smartphone(4, "IPhone 13", 157000.50, "Apple");
@@ -53,7 +53,7 @@ class ProdManagerTest {
 
     @Test
     void shouldSearchNameModel() {
-        Product[] expected = new Product[]{fourth, fifth};
+        Product[] expected = new Product[]{first, fourth, fifth};
         Product[] actual = manager.searchBy("IPhone");
         assertArrayEquals(expected, actual);
     }
@@ -66,7 +66,7 @@ class ProdManagerTest {
     }
 
     @Test
-    void shouldSearchNonProduct() {
+    void shouldSearchEmptySearch() {
         Product[] expected = new Product[]{};
         Product[] actual = manager.searchBy("Май");
         assertArrayEquals(expected, actual);
