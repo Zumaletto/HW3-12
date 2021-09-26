@@ -3,6 +3,7 @@ package ru.netology.manager;
 import ru.netology.domain.Book;
 import ru.netology.domain.Product;
 import ru.netology.domain.Smartphone;
+import ru.netology.repo.ProdRepo;
 
 public class ProdManager {
     private ProdRepo repo;
@@ -20,6 +21,7 @@ public class ProdManager {
         for (Product item : repo.findAll()) {
             if (matches(item, text)) {
                 Product[] tmp = new Product[result.length + 1];
+                System.arraycopy(result, 0, tmp, 0, result.length);
                 tmp[tmp.length - 1] = item;
                 result = tmp;
             }
@@ -46,7 +48,7 @@ public class ProdManager {
             if (smartphone.getName().contains(search)) {
                 return true;
             }
-            return false;
         }
-
+        return false;
     }
+}

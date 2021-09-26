@@ -5,12 +5,13 @@ import java.util.Objects;
 public class Smartphone extends Product {
     public String manufacturer;
 
+    public Smartphone() {
+        super();
+    }
+
     public Smartphone(int id, String name, double price, String manufacturer) {
         super(id, name, price);
         this.manufacturer = manufacturer;
-    }
-    public Smartphone() {
-        super();
     }
 
     public String getManufacturer() {
@@ -21,17 +22,5 @@ public class Smartphone extends Product {
         this.manufacturer = manufacturer;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        Smartphone that = (Smartphone) o;
-        return Objects.equals(manufacturer, that.manufacturer);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), manufacturer);
-    }
 }

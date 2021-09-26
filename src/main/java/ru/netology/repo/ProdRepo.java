@@ -1,8 +1,9 @@
-package ru.netology.manager;
+package ru.netology.repo;
 
 import ru.netology.domain.Product;
 
 public class ProdRepo {
+
     private Product[] items = new Product[0];
 
     public void save(Product item) {
